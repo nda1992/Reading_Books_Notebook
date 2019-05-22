@@ -196,3 +196,119 @@ public DLLNode DLLDelete(DLLNode head,int position){
         return head;
     }
 ```
+
+### 链表的相关问题
+- 1.用链表实现栈
+- 2.找到链表的第n个节点
+```
+public int select_n_thListNode1(Node head,int position){
+        if (head==null) {
+            System.out.println("链表为空，没有找到目标节点...");
+            return -1;
+        }
+
+        int size = ListLength(head);
+        if (position>size||position<1){
+            System.out.println("输入删除位置错误，请重新输入.");
+            return -1;
+        }
+        int k = size-position;
+        int count=0;
+        Node currentNode = head;
+        while (count<k){
+            currentNode=currentNode.getNext();
+            count++;
+        }
+        return currentNode.getData();
+    }
+//方法2：只遍历一次（    设置两个指针，当前向指针找到倒数的第n个目标位置后，后向指针和前向指针通过移动，
+//当前向指针到达链表尾时，后向指针的位置就是目标节点）
+    public Node select_n_thListNode2(Node head,int position){
+        Node pTemp = head,pNthNode = null;
+        for (int x=1;x<position;x++) {
+            if (pTemp != null) pTemp = pTemp.getNext();
+        }
+            while (pTemp!=null){
+                if (pNthNode==null) pNthNode=head;
+                else pNthNode=pNthNode.getNext();
+                pTemp=pTemp.getNext();
+            }
+            if (pNthNode!=null)return pNthNode;
+            return null;
+        }
+```
+- 3.判断给定的链表是以NULL结尾还是形成一个环
+```
+ //使用快慢指针判断链表是否是环
+ //slowPtr每次后移1个节点，fastPtr每次后移2个节点
+ //类似问题：判断链表是蜗牛形结构还是蛇形结构
+    public boolean DoesConListNode(Node head){
+        if (head==null) return false;
+        Node slowPtr=head,fastPtr=head;
+        while (fastPtr.getNext()!=null && fastPtr.getNext().getNext()!=null){
+            slowPtr=slowPtr.getNext();
+            fastPtr=fastPtr.getNext().getNext();
+            if (slowPtr==fastPtr)   return true;
+        }
+        return false;
+    }
+```
+- 4.判断给定的链表是否以NULL结束，如果链表中存在环，找到环的起始节点
+```
+    /*
+    * 在找到链表的环后，初始化slowPtr的值，使其指向链表的表头节点，然后slowPtr和fastPtr从各自的位置开始沿着链表移动，每次均移动一个节点，
+    * slowPtr与fastPtr相遇的位置就是环开始的位置
+    * */
+    public Node FindBeginLoop(Node head){
+        Node slowPtr = head,fastPtr = head;
+        boolean loopExist = false;
+        if (head==null) return null;
+        while (fastPtr.getNext()!=null && fastPtr.getNext().getNext()!=null){
+            slowPtr=slowPtr.getNext();
+            fastPtr=fastPtr.getNext().getNext();
+            if (slowPtr==fastPtr)   loopExist=true;
+            break;
+        }
+        if (loopExist){
+            slowPtr=head;
+            while (slowPtr!=fastPtr){
+                fastPtr=fastPtr.getNext();
+                slowPtr=slowPtr.getNext();
+            }
+            return slowPtr;
+        }
+        return null;
+    }
+```
+- 5.判断给定的链表是否以NULL结束，如果链表中存在环，返回环的长度
+```
+    /*
+    *在找到链表的环后，初始化slowPtr的值，使其指向链表的表头节点，保持slowPtr不动，fastPtr指针继续移动，每次移动fastPtr时，计数器+1，直到再次回到slowPtr指针所在的位置
+    * 即可求出环的长度
+    * */
+    public int FindLoopLength(Node head){
+        Node slowPtr = head,fastPtr = head;
+        boolean loopExist = false;
+        int count=0;
+        if (head==null){
+            return 0;
+        }
+        while (fastPtr.getNext()!=null && fastPtr.getNext().getNext()!=null){
+            slowPtr=slowPtr.getNext();
+            fastPtr=fastPtr.getNext().getNext();
+            if (fastPtr==slowPtr)loopExist=true;
+            break;
+        }
+        if (loopExist){
+            fastPtr=fastPtr.getNext();
+            while (slowPtr!=fastPtr){
+                fastPtr=fastPtr.getNext();
+                count++;
+            }
+            return count;
+        }
+        return 0;
+    }
+```
+- 6.在有序链表中插入一个节点
+- 7.逆至单向链表
