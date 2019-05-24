@@ -311,4 +311,56 @@ public int select_n_thListNode1(Node head,int position){
     }
 ```
 - 6.在有序链表中插入一个节点
+```
+public Node InsertSortedList(Node head,Node newNode){
+        Node currentNode = head;
+        Node temp=null;
+        if (head==null) return newNode;
+        //遍历链表，直至找到比新节点对应数值更大的节点
+        while (currentNode!=null&&currentNode.getData()<newNode.getData()){
+            temp=currentNode;
+            currentNode=currentNode.getNext();
+        }
+        newNode.setNext(currentNode);
+        temp.setNext(newNode);
+        return head;
+    }
+```
 - 7.逆至单向链表
+```
+public Node ReserveList(Node head){
+        Node temp=null,nextNode = null;
+        while (head!=null){
+            nextNode=head.getNext();
+            head.setNext(temp); //头节点指向null
+            temp=head;
+            head=nextNode;
+        }
+        return temp;
+    }
+```
+- 8.假设两个链表在某个节点相交后，组成一个单向链表，找到两个单向链表的的合并节点
+```
+
+```
+- 9.找到链表的中间节点
+```
+
+```
+- 10.检查链表的长度是奇数还是偶数
+```
+
+```
+- 11.把两个有序链表组合成一个有序链表
+```
+
+```
+- 12.逐对逆至链表
+```
+
+```
+- 13.将给定的二叉树转换为双向链表
+```
+
+```
+- 14.
