@@ -69,9 +69,97 @@ public class TestIface {
 abstract class Incomp implements Callback{}
 ```
 
-类Incomp没有实现callback方法，但是派生自Incomp的所有类必须实现callback方法，或者本省也被声明为abstract
+类Incomp没有实现callback方法，但是派生自Incomp的所有类必须实现callback方法，或者本身也被声明为abstract
 
+```java
 
+interface InStack{
+    void push(int m);
+    int pop();
+}
+
+class stack1 implements InStack{
+    //固定数组实现栈
+    int[] temp = new int[50];
+    int tos=-1;
+    @Override
+    public void push(int m) {
+        if (tos==temp.length-1){
+            System.out.println("栈已满，不能压入数据.");
+        }else {
+            temp[++tos]=m;
+        }
+    }
+
+    @Override
+    public int pop() {
+        if (tos<0){
+            System.out.println("栈为空，不能弹出.");
+            return 0;
+        }else{
+            return temp[tos--];
+        }
+    }
+}
+
+class stack2 implements InStack{
+    //动态数组实现栈
+    int[] temp = new int[50];
+    int tos=-1;
+
+    @Override
+    public void push(int m) {
+        if (tos==temp.length-1){
+            int[] item = new int[temp.length*2];
+            for (int i = 0; i < temp.length; i++) {
+                item[i]=temp[i];
+            }
+            item=temp;
+            item[++tos]=m;
+        }else{
+            temp[++tos]=m;
+        }
+    }
+
+    @Override
+    public int pop() {
+        if (tos<0){
+            System.out.println("栈为空，不能弹出.");
+            return 0;
+        }
+        else {
+            return temp[tos--];
+        }
+    }
+}
+
+public class IFtest {
+    public static void main(String args[]){
+        //可以根据运行时决定引用哪个方法，这就是接口对于多态的体现
+        InStack inStack;
+        stack1 stack1 = new stack1();
+        stack2 stack2 = new stack2();
+        inStack=stack1;
+        for (int i = 0; i < 12; i++) {
+            inStack.push(i);
+        }
+        inStack=stack2;
+        for (int i = 0; i < 8; i++) {
+            inStack.push(i);
+        }
+        inStack=stack1;
+        for (int i = 0; i < 12; i++) {
+            System.out.println(inStack.pop());
+        }
+        inStack=stack2;
+        for (int i = 0; i < 8; i++) {
+            System.out.println(inStack.pop());
+        }
+    }
+}
+```
+
+*接口可以使用extends继承另一个接口，如果类实现的接口继承自另外一个接口，那么类必须实现在接口定义的所有方法*
 
 
 
