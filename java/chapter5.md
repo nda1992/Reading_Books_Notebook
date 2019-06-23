@@ -2,7 +2,7 @@
 
 ### 基本知识
 
-异常是运行时错误.**<br>
+**异常是运行时错误.**<br>
 
 Java的异常是用于描述一段代码发生的异常情况(错误)的对象.当出现引起异常的情况时，就会创建用来表示异常的对象，并在引起错误的方法中抛出异常对象.<br>
 
@@ -33,6 +33,50 @@ Throwable的两个子类：Exception和Error<br>
 ### Java的内置异常
 
 在所有方法中的throws列表中不需要包含RuntimeException标准类型的异常.这些异常被成为未经检查的异常.除了这类异常外，如果方法可能产生这些异常中的某个异常，并且方法本身不进行处理，那么需要在方法的throws列表中包含该异常.这些异常被称为经检查的异常.<br>
+
+- java.lang中某些未经检查的异常
+
+| 异常                           | 含义               |
+| ------------------------------ | ------------------ |
+| ArrayIndexOutOfBoundsException | 数组索引越界       |
+| NullPointerException           | 非法使用空引用     |
+| IndexOutOfBoundsException      | 某些类型的索引越界 |
+| ClassCastException             | 无效转换           |
+| IllegalArgumentException       | 使用非法参数调方法 |
+
+- java.lang中某些经检查的异常
+
+| 异常                         | 含义                       |
+| ---------------------------- | -------------------------- |
+| ClassNotFoundException       | 类未找到                   |
+| ReflectiveOperationException | 与反射相关的异常超类       |
+| InterruptedException         | 一个线程被另一个线程中断   |
+| IllegalAccessException       | 对类的访问被拒绝           |
+| InstantiationException       | 视图为抽象类或接口创建对象 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
