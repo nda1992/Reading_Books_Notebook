@@ -14,3 +14,9 @@ Java的异常是用于描述一段代码发生的异常情况(错误)的对象.�
 
 **从方法抛出的任何异常都必须通过一条throws字句进行指定**<br>
 
+*所有异常类型都是内置Throwable的子类，Throwable位于异常类层次中的顶部*<br>
+
+Throwable的两个子类：Exception和Error<br>
+
+**Exception的一个重要子类是：RuntimeException，这种类型的异常是自动定义的，包括除零和无效数组索引类型**<br>
+
