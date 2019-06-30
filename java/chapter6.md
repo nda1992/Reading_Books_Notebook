@@ -103,6 +103,45 @@ Thread(Runnable threadOb,String threadName)
 
 **在创建了新线程之后，只有调用线程的start()方法，线程才会执行，该方法是在Thread类中声明的.**<br>
 
+```java
+class NewThread implements Runnable {
+    Thread t;
+    NewThread(){        //创建第二个线程
+        t = new Thread(this,"demo thread:");
+        System.out.println("Child thread is:"+t);
+        t.start();	
+    }
+
+    @Override
+    public void run() {     //这是第二个线程的入口点
+        try{
+            for (int i = 5; i >0 ; i--) {
+                System.out.println("Child thread is:"+i);
+                Thread.sleep(1000);
+            }
+        }catch(InterruptedException e){
+            System.out.println("Child interrupted.");
+        }
+        System.out.println("Existing child thread.");
+    }
+}
+
+public class ThreadDemo {
+    public static void main(String args[]){
+        new NewThread();    //创建一个新的线程
+        try{
+            for (int i = 5; i >0; i--) {
+                System.out.println("Main thread is:"+i);
+                Thread.sleep(1000);
+            }
+        }catch(InterruptedException e){
+            System.out.println("Main interrupted.");
+        }
+        System.out.println("Existing main thread.");
+    }
+}
+```
+
 
 
 
