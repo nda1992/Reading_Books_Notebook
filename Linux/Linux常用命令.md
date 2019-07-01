@@ -122,6 +122,79 @@ usermod -G shared test
 group -n sharing shared
 ```
 
+### 软件包管理
+
+```shell
+#ubuntu下查看已经安装的软件包
+aptitude
+
+#ubuntu下查看某个特定软件包关联的所有文件的列表
+dpkg -L package_name
+
+#ubuntu下从软件库中查找软件包
+aptitude search package_name
+
+#ubuntu下从软件库中安装软件包
+aptitude install package_name
+
+#red hat系统
+#列出已经安装的软件包
+yum list installed
+
+#查看某个软件包的详细信息
+yum list package_name
+
+#yum安装软件
+yum install package_name
+
+#yum更新软件
+yum update package_name
+
+#yum卸载软件
+yum remove package_name
+
+#显示所有包的依赖关系
+yum deplist package_name
+
+#寻找软件库
+yum repolist
+
+#源码安装软件包
+tar -xzvf package_name
+cd package_name
+./configure
+make
+make install
+```
+
+### vim编辑器
+
+```shell
+h:左移
+j:下移
+k:上移
+l:右移
+
+ctrl+F:下翻一屏数据
+pageup:上翻一屏数据
+G:移动缓冲区最后一行
+gg:移到缓冲区第一行
+
+x:删除当前光标躲在位置的字符
+dd:删除当前光标所在行
+dw:删除当前光标所在位置的单词
+d$:删除当前光标所在位置至行尾的内容
+J:删除当前光标所在行行尾的换行符
+u:撤销前一命令编辑命令
+p:粘贴
+y:复制
+
+:s/old/new/g：替换所有old
+:%s/old/new/g:替换整个文件中的所有old
+:%s/old/new/gc:替换整个文件中的所有old，但在每次出现时提示
+
+```
+
 
 
 
