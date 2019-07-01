@@ -152,8 +152,119 @@ ALTER TABLE 原表名 RENAME TO 新表名;
 - 数据的约束完整性
 
 ```mysql
-
+#外键是一个表中的一个或一组属性，它不是这个表的主键，但它是另外一个表的主键.定义外键后，不允许删除外键引用的另一个表中具有关联关系的记录
+#外键所属的表称作参照关系，相关联的主键所在的表称为被参照关系
+CREATE TABLE db_school.tb_student(
+	studentNo CHAR(10),
+    studentName VARCHAR(20) NOT NULL,
+    sex CHAR(2) NOT NULL,
+    birthday DATE,
+    native VARCHAR(20),
+    nation VARCHAR(10),
+    classNo CHAR(6),
+    CONSTRAINT PK_student PRIMARY KEY(studentNo),	#主键
+    CONSTRAINT PK_student FOREIGN KEY(classNo) REFERENCES tb_class (classNo)	#外键与另一个表的主键(classNo字段)相关联
+    ON UPDATE RESTRICT	#
+    ON DELETE CASCADE	#从被参照表中删除或修改记录时，自动删除或修改参照表中匹配的记录
+)ENGINE=InnoDB;
 ```
+
+- 删除约束
+
+```mysql
+#删除外键约束
+ALTER TABLE tb_name DROP FOREIGN KEY PK_student;
+
+#删除主键约束
+ALTER TABLE tb_name DROP PRIMARY KEY;
+```
+
+- 添加约束
+
+```mysql
+#添加主键约束
+ALTER TABLE tb_name ADD CONSTRAINT <约束名> PRIMARY KEY (主键字段);
+
+#添加外键约束
+ALTER TABLE tb_name ADD CONSTRAINT <约束名> FOREIGN KEY (外键字段名) REFERENCES 被参照表(主键字段名);
+```
+
+
+
+### SQL查询语句
+
+- SELECT语句
+
+```mysql
+SELECT ALL DISTINCT c1,c2,...
+FROM tb_name/view_name 
+WHERE 条件表达式
+GROUP BY col HAVING 条件表达式
+ORDER BY col ASC|DESC
+LIMIT m,n
+
+#GROUP BY：将结果集按指定字段分组
+#HAVING:用于指定分组结果集的过滤条件
+```
+
+WHERE字句中常用的查询条件
+
+| 查询条件   | 操作符                       |
+| ---------- | ---------------------------- |
+| 比较       | =,<>,!=,<,<=,>,>=,!<,!>      |
+| 范围       | BETWEEN AND ,NOT BETWEEN AND |
+| 集合       | IN ,NOT IN                   |
+| 字符串匹配 | LIKE,NOT LIKE                |
+| 空值       | IS NULL,IS NOT NULL          |
+| 多重条件   | AND,OR                       |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
