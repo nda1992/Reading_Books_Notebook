@@ -204,7 +204,7 @@ public class string {
 
 ### java.io
 
-![](/usr/2019/读书笔记/images/IO1.png)
+![](../images/IO1.png)
 
 
 
