@@ -66,11 +66,177 @@ Class类封装了类或接口的运行时状态，Class类型的对象是加载�
 
 ![集合框架](../images/集合框架.png)
 
+**对一些接口和类的说明**
+
+*List*：用于存储一连串元素的集合，列表中可以包含重复元素.可能抛出的异常(**UnsupportOperationException	ClassCaseException	IndexOutOfBoundsException	NullPointerException**)
+
+*Set*:声明了集合中不允许出现重复元素，Set没有自定属于自己的方法
+
+*SortedSet*：扩展了Set接口，并且声明了以升序进行排序的集合.可能抛出的异常(**NoSuchElementExpection	ClassCaseException	NullPointerException	IllegalArgumentException**)
+
+*Queue*:队列，扩展了Collection接口
+
+*Deque*：声明了双端队列.可以向标准队列先进先出，也可以像堆栈后进先出
+
+*ArrayList*：支持能够按需增长的动态数组.
+
+*LinkedList*：提供了一种链表的数据结构
+
+*HashSet*：创建使用哈希表存储元素的集合，HashSet没有定义新的方法.不能保证元素的顺序，因为散列处理过程通常不创建有序的组.如果希望有序存储元素，可以使用TreeSet
+
+*LinkedHashSet*：扩展了HashSet类，没有新增方法.维护了一个链表
+
+*TreeSet*：用于创建使用树进行存储的组，**对象以升序存储**。访问和检索速度较快，**对于存储大量的、必须能够快速查找到的有序信息，可以使用TreeSet**
+
+*EnumSet*：用于枚举类型的元素
+
+**通过迭代器访问集合**
+
+```java
+import java.util.ArrayList;
+import java.util.Iterator;
+
+//使用hasNext和next
+public class string {
+    public static void main(String args[]){
+        ArrayList<String> arrayList = new ArrayList<String>();
+        arrayList.add("c");
+        arrayList.add("a");
+        arrayList.add("b");
+        arrayList.add("e");
+        arrayList.add("d");
+        Iterator<String> iterator = arrayList.iterator();
+        while (iterator.hasNext()){
+            String string = iterator.next();
+            System.out.println(string+" ");
+        }
+    }
+}
+
+//使用foreach
+import java.util.ArrayList;
+
+public class string {
+    public static void main(String args[]){
+        ArrayList<String> arrayList = new ArrayList<String>();
+        arrayList.add("c");
+        arrayList.add("a");
+        arrayList.add("b");
+        arrayList.add("e");
+        arrayList.add("d");
+        for (String string:arrayList) {
+            System.out.println(string);
+        }
+    }
+}
+```
+
+**集合中也可存储用户自定义的类**
+
+**映射**
+
+键是唯一的，但是值可以重复的.可以接受null或不可接受null.
+
+它们没有实现Iterable接口.不能使用foreach风格的输出.不能为映射获取迭代器.**但是可以获取映射的集合视图，集合视图允许使用for循环和迭代器**
+
+|   接口    |                   描述                   |
+| :-------: | :--------------------------------------: |
+|    Map    |             将唯一键映射到值             |
+| Map.Entry | 描述映射中的元素(键/值)，这是Map的内部类 |
+| SortedMap |        扩展Map，从而以升序保存键         |
+
+*Map*的常用方法
+
+| 方法                                                         | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| void clear()                                                 | 移除映射中的所有键/值对                                      |
+| default V compute(K key, BiFunction<? super K,? super V,? extends V> func) | 调用func以构造一个新值，func不返回null，将新的键值对添加到映射中，func返回null，移除原来的配对，并返回新值 |
+| boolean containsKey(Object key)                              | 调用的映射是否包含key作为键                                  |
+| boolean containsValue(Object value)                          | 调用的映射是否包含value作为值                                |
+| Set<Map.Entry<K,V>> entrySet()                               | 返回包含映射中的所有条目的Set对象                            |
+| boolean equals(Object o)                                     | 如果obj是Map对象并且与调用映射包含相同的条目，返回true，反之返回false |
+| V get(Object key)                                            | 返回与键k关联的值，如果没有找到，返回null                    |
+| boolean isEmpty()                                            | 映射是否为null                                               |
+| Set<K> keySet()                                              | 返回包含映射中某些键的Set对象                                |
+| V put(K key, V value)                                        | 将一个条目放入映射中，覆盖之前与此值关联的值，键和值分别为k和v，如果键不存在，返回null，反之，返回之前与键关联的值 |
+| V remove(Object key)                                         | 移除键等于k的条目                                            |
+| default V replace(K key, V value)                            | 如果k指定的键包含在调用映射中，就将其值设为v，并返回其原来的值 |
+| int size()                                                   | 键值对的数量                                                 |
+| Collection<V> values()                                       | 返回包含映射中所有值的集合，该方法提供了调用映射中值的一个集合视图 |
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class string {
+    public static void main(String args[]){
+        HashMap<String,Double> hashMap = new HashMap<String,Double>();		//HashMap是使用哈希表存储映射
+        hashMap.put("join",new Double(98.2));
+        hashMap.put("smith",new Double(96.2));
+        hashMap.put("hall",new Double(89.5));
+        System.out.println(hashMap.get("join"));
+        hashMap.put("miller",99.3);
+        Set<Map.Entry<String,Double>> set = hashMap.entrySet();		//将Map集合转换为Set集合，从而使用foreach输出
+        for (Map.Entry<String,Double> me:set) {
+            System.out.println(me.getKey()+": ");
+            System.out.println(me.getValue());
+        }
+    }
+}
+```
+
+*TreeMap*
+
+该类存储在树结构中的映射，支持快速检索，不同于HashMap，TreeMap提供了有序存储键值对的高效手段，树确保元素以键的升序存储
+
+*LinkedHashMap*
+
+扩展了HashMap类，在映射中以插入条目的顺序维护一个条目链表，从而可以按照插入顺序迭代整个映射.
+
+*Properties*
+
+是HashTable的子类，用于保存值的列表，在列表中，键为String类型，值为String类型
+
 ### java.util
 
 
 
 ### java.io
+
+![](/usr/2019/读书笔记/images/IO1.png)
+
+
+
+
+
+*FileInputStream类*
+
+使用FileInputStream类创建的InputStream对象可以是用于从文件读取字节.
+
+```java
+//常用的两个构造函数
+FileInputStream(FileDescriptor fdObj)
+FileInputStream(File file)
+//两个构造函数的使用方式
+FileInputStream fo = new FileInputStream("/home/aaa/Linux_shell/test1.sh");
+
+File file = new File("/home/aaa/Linux_shell/test1.sh");
+FileInputStream fileInputStream = new FileInputStream(file);
+```
+
+*FileOutputStream类*
+
+FileOutputStream类创建能用于向文件中写入字节的OutputStream对象
+
+```java
+//常用的构造方法
+FileOutputStream(File file)
+FileOutputStream(FileDescriptor fdObj)
+
+    
+    
+```
 
 
 
