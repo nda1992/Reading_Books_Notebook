@@ -225,7 +225,7 @@ File file = new File("/home/aaa/Linux_shell/test1.sh");
 FileInputStream fileInputStream = new FileInputStream(file);
 ```
 
-*FileOutputStream类*
+*FileOutputStream类*<br>
 
 FileOutputStream类创建能用于向文件中写入字节的OutputStream对象
 
@@ -233,9 +233,66 @@ FileOutputStream类创建能用于向文件中写入字节的OutputStream对象
 //常用的构造方法
 FileOutputStream(File file)
 FileOutputStream(FileDescriptor fdObj)
+```
 
+*ByteArrayInputStream*
+
+```java
+//使用字节数组作为源的输入流的一个实现
+ByteArrayInputStream(byte[] buf)
+ByteArrayInputStream(byte[] buf, int offset, int length)
+```
+
+*ByteArrayOutputStream*
+
+```java
+//使用字节数组作为目标的输出流的一个实现
+ByteArrayOutputStream()	//创建32字节的缓冲区
+ByteArrayOutputStream(int size)	//创建指定size大小的缓冲区
+```
+
+*FilterInputStream和FilterOutputStream*<br>
+
+过滤的字节流，用于封装底层输入流或输出流
+
+*BufferedInputStream和BufferedOutputStream*<br>
+
+```java
+//缓冲字节流
+BufferedInputStream(InputStream in)
+BufferedInputStream(InputStream in, int size)
     
-    
+BufferedOutputStream(OutputStream out)
+BufferedOutputStream(OutputStream out, int size)
+```
+
+*SequenceInputStream*<br>
+
+允许连接多个InputStream对象
+
+```java
+//SequenceInputStream代码片段，将三个InputStream对象合并到Vector中，并打印
+InputStream inputStream1 = new FileInputStream("/home/aaa/Linux_shell/test1.sh");
+        InputStream inputStream2 = new FileInputStream("/home/aaa/Linux_shell/test2.sh");
+        InputStream inputStream3 = new FileInputStream("/home/aaa/Linux_shell/test3.sh");
+        Vector<InputStream> vector = new Vector<InputStream>();
+        vector.addElement(inputStream1);
+        vector.addElement(inputStream2);
+        vector.addElement(inputStream3);
+        SequenceInputStream sis = new SequenceInputStream(vector.elements());
+        byte[] buf = new byte[1024];
+        int len;
+        while ((len=sis.read(buf,0,1024))!=-1){
+            System.out.println(new String(buf,0,len));
+        }
+```
+
+*PrintStream*
+
+```java
+PrintStream(File file)
+PrintStream(File file, String csn)
+
 ```
 
 
