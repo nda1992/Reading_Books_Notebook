@@ -292,8 +292,31 @@ InputStream inputStream1 = new FileInputStream("/home/aaa/Linux_shell/test1.sh")
 ```java
 PrintStream(File file)
 PrintStream(File file, String csn)
-
 ```
+
+### 字符流
+
+![](../images/reader.png)
+
+*FilterReader*
+
+```java
+//构造方法
+FileReader(File file)
+FileReader(String fileName)
+```
+
+*CharArrayReader*
+
+```java
+//使用字符数组作为源的一个输入流实现
+CharArrayReader(char[] buf)
+CharArrayReader(char[] buf, int offset, int length)
+```
+
+
+
+![](../images/Writer.png)
 
 
 
