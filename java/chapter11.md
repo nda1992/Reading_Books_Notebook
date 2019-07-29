@@ -318,6 +318,8 @@ CharArrayReader(char[] buf, int offset, int length)
 
 ![](../images/Writer.png)
 
+### IO流的补充
+
 
 
 ### NIO
