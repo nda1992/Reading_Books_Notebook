@@ -198,3 +198,52 @@ class Solution1:
             root.left = self.Serialize(s)
             root.right = self.Serialize(s)
         return root
+
+def test11(string):
+    maxlen=1
+    for i,_ in enumerate(string):
+        count = 0
+        charset=str()
+        for j in string[i:]:
+            if j not in charset:
+                charset+=j
+                count+=1
+                if maxlen<count:
+                    maxlen=count
+            else:
+                break
+    return maxlen
+
+def test12(string):
+    if len(string)<=0:
+        return 0
+    maxlen=1
+    start=0
+    charset = {}
+    for index,char in enumerate(string):
+
+        if char in charset and start<=charset[char]:
+            start=charset[char]+1
+        else:
+            maxlen=max(maxlen,index-start+1)
+        charset[char]=index
+    return maxlen
+
+def test13(string):
+    maxlen=1
+    for index,char in enumerate(string):
+        count=0
+        charset=str()
+        if char not in charset:
+            charset+=char
+            count+=1
+            if maxlen<count:
+                maxlen=count
+
+    return maxlen
+
+
+
+print(test12("abcabcdbb"))
+
+
