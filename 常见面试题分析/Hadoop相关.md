@@ -1,176 +1,158 @@
 # Hadoop相关
 
-## HDFS的基本概念
+## 常见面试题目
 
-首先，它是一个文件系统，用于存储文件，通过统一的命名空间——目录树来定位文件；<br>
+面试题包含了编程题和问答题.不划分顺序.
 
-**其次，它是分布式的**，由很多服务器联合起来实现其功能，集群中的服务器有各自的角色.<br>
+### 统计上行流量、下行流量和总流量
 
-### 重要特性
 
-1）HDFS中的文件在物理上是**分块存储（block）**，块的大小可以通过配置参数( dfs.blocksize)来规定，默认大小在hadoop2.x版本中是128M，老版本中是64M.<br>
 
-2）HDFS文件系统会给客户端提供一个**统一的抽象目录树**，客户端通过路径来访问文件，形如：hdfs://namenode:port/dir-a/dir-b/dir-c/file.data.<br>
 
-3）目录结构及文件分块信息(元数据)的管理由namenode节点承担<br>
 
-——**namenode是HDFS集群主节点**，负责维护整个hdfs文件系统的目录树，以及每一个路径（文件）所对应的block块信息（block的id，及所在的datanode服务器）.<br>
+### 统计两个好友之间的共同好友
 
-4）文件的各个block的存储管理由datanode节点承担<br>
 
----- **datanode是HDFS集群从节点**，每一个block都可以在多个datanode上存储多个副本（副本数量也可以通过参数设置dfs.replication）.<br>
 
-5）HDFS是设计成适应一次写入，多次读出的场景，**且不支持文件的修改**.<br>
 
-## HDFS的基本操作
 
-```shell
-#列出/下的所有文件和目录
-hadoop fs -ls /
+### 统计两个两两相互关注的好友
 
-#在HDFS上创建目录
-hadoop fs -mkdir -p /aaa
 
-#从本地剪切粘贴到HDFS
-hadoop fs -moveFromLocal /usr/text.txt /aaa
 
-#追加一个文件到已经存在的文件末尾
-hadoop fs -appendToFile /usr/hello.txt /aaa/hello.txt
+### 如何编写从日志文件中上传日志数据到HDFS中(编写shell脚本)？
 
-#显示文件内容
-hadoop -fs cat /aaa/hello.txt
 
-#显示文件的末尾
-hadoop fs -tail /aaa/hello.txt
 
-#对文件设置权限
-hadoop fs -chmod 666 /aaa/hello.txt
+### 编写WordCount程序
 
-#从hdfs的一个路径拷贝hdfs的另一个路径
-hadoop fs -cp /aaa/test.dat /aaa/test1.dat
 
-#在hdfs目录中移动文件
-hadoop fs -mv /aaa/hello.txt /
 
-#从hdfs下载文件到本地
-hadoop fs -get /aaa/hello.txt
+### MapReduce的切片机制
 
-#从本地上传文件到HDFS中
-hadoop fs -put /usr/hello.txt /aaa/hello.txt
 
-#删除文件或文件夹
-hadoop fs -rm -r /aaa/bbb/
 
-#删除空目录
-hadoop fs -rmdir /aaa/bbb/ccc/
+### MapReduce的shuffle原理
 
-#统计文件系统的可用空间信息
-hadoop fs -df -h /
 
-#统计文件夹的大小
-hadoop fs -du -s -h /aaa/*
 
-# 统计一个指定目录下的文件节点的数量
-hadoop fs -count /aaa/
 
-#设置hdfs中文件的副本数量
-hadoop fs -setrep 3 /aaa/hello.txt
-#<这里设置的副本数只是记录在namenode的元数据中，是否真的会有这么多副本，还得看datanode的数量>
-```
 
-## HDFS原理
+### MapReduce的整体流程
 
-### HDFS的基本内容
 
-HDFS集群分为NameNode、DataNode和Secondary NameNode<br>
 
-NameNode负责管理整个文件系统的元数据<br>
 
-DataNode负责管理用户的数据块<br>
 
-文件会按照固定的大小切成若干块后分布式存储到若干台DataNode上<br>
+### 客户端提交MR程序Job的流程
 
-每个文件块可以有多个副本，并存放在不同的DataNode上<br>
 
-DataNode会定期向NameNode汇报自身所保存的文件block信息，而NameNode则会负责保持文件的副本数量<br>
 
-HDFS的内部工作机制对客户端保持透明，客户端请求访问HDFS是通过NameNode申请来进行<br>
 
-### HDFS的读流程
 
-客户端将要读取的文件路径发送到namenode，namenode获取文件的原信息（即block块的存放位置信息）返回给客户端.客户端根据返回的信息找到相应的datanode逐个文件的block，并在客户端本地进行数据追加合并从而获取整个文件.
+### MapReduce的设计思路？
 
-HDFS的读流程如下：
 
-![](../images/hdfs的读流程.png)
 
-### HDFS的写流程
 
-客户端要向HDFS写数据，首先要跟namenode通信以确认可以写文件并获得接收文件block的datanode，然后，客户端按顺序将文件逐个block传递给相应datanode，并由接收到block的datanode负责向其他datanode复制block的副本.
 
-HDFS的写流程如下：
+### NameNode的安全模式
 
-![](/usr/2019/读书笔记/images/HDFS写流程.png)
 
-### NameNode的工作机制
 
-#### NameNode的职责
 
-- 负责客户端请求的相应
-- 元数据的管理(查询和修改等)
 
-#### 元数据管理
+### Yarn的流程
 
-NameNode对数据的管理采用的三种存储形式：
 
-- 内存元数据
 
-- 磁盘元数据镜像文件
-- 数据操作日志文件(可通过日志运算出元数据)
+### Hadoop的分布式缓存机制
 
-#### 元数据存储机制
+分布式缓存是Hadoop提供的一种机制.在job执行前，先将指定的文件分发到task执行的机器上，并有相关机制对cache文件进行管理.分布式缓存可将具体应用相关的、大尺寸的、只读的文件有效地分布放置.<br>
 
-- 内存中有一份完整的元数据(**内存meta data**)
-- 磁盘有一个“准完整”的元数据镜像（**fsimage**）文件(在namenode的工作目录中)
-- 用于衔接内存metadata和持久化元数据镜像fsimage之间的操作日志（**edits文件**）
+f分布式是Map/Reduce框架提供的功能，能够缓存应用程序所需的文件 （包括文本，档案文件，jar文件等）.<br>
 
+MapRedcue框架在作业所有任务执行之前会把必要的文件拷贝到slave节点上. 它运行高效是因为每个作业的文件只拷贝一次并且为那些没有文档的slave节点缓存文档.
 
 
-#### 关于NameNode需要考虑的问题
 
-- *集群启动后，可以查看文件，但是上传文件时报错，打开web页面可看到namenode正处于safemode状态，怎么处理？*
+### Hadoop输入分片
 
-- *Namenode服务器的磁盘故障导致namenode宕机**，**如何挽救集群及数据**？*
-- *Namenode是否可以有多个**？namenode内存要配置多大？namenode跟集群数据存储能力有关系吗？*
-- *文件的blocksize究竟调大好还是调小好？*
+Hadoop将MapReduce的输入数据划分为等长的小数据块，称为输入分片.Hadoop为每个分片构建一个map任务，并由该任务来运行用户自定义的map函数从而处理分片中的每条记录.
 
+如果输入分片过小的优缺点：
 
+- 优点：可以获得更好的负载平衡.
 
+- 缺点：管理分片和map任务将会拖延整个作业的执行时间.
 
 
 
+### HDSF的构建思路？
 
+- **大文件**
+- 流式数据访问
 
+一次写入、多次读取是最高效的访问模式.数据集通过由数据源生成或从数据源复制而来，接着长时间在此数据集上进行各种分析，每次分析都将涉及该数据集的大部分数据甚至全部数据.因此，读取整个数据集的延迟比读取第一条记录的时间延迟更重要.
 
+- 低时间延迟的数据访问
 
+要求低时间延迟数据访问的应用，不适合使用HDFS，HDFS是为高数据吞吐量应用优化的，这可能会以提高时间延迟为代价.而对于低延迟访问需求，HBase是更好的选择.
 
+- 大量的小文件
 
+由于NameNode将文件系统的元数据存储在内存中，因此该文件系统所能存储的文件总数受限于NameNode的内存容量.
 
+- 多用户写入，任意修改文件
 
+HDSF中的文件写入只支持单个写入者，而且写操作总是以“只添加”方式在文件末尾写入数据.不支持多个写入者的操作.也不支持在文件的任意位置进行修改.
 
+### Hadoop为NameNode提供的两种容错机制？
 
+- 备份那些组成文件系统元数据持久状态的文件
+- 运行SecondaryNameNode.它不能作为NameNode，只是用于辅助NameNode.即辅助NameNode定期合并编辑日志与命名空间镜像，以防止编辑日志过大.
 
 
 
+### HDFS的读数据流程
 
+- 客户端调用FileSystem对象的open()方法打开希望读取的文件.对于HDFS来说，该对象是DistributedFileSystem的一个实例.
+- DistributedFileSystem通过使用远程过程调用（RPC）来调用NameNode，以确定文件起始块的位置.
+- 对于每个块，NameNode返回存有该块副本的DataNode地址，这些DataNote根据它们与客户端的距离来排序，如果该客户端本身就是一个DataNote，那么该客户端将会从保存有相应数据块副本的本地DataNote读取数据.
+- DistributedFileSystem类返回一个FSDataInputStream对象给客户端以便读取数据.FSDataInputStream类转而封装DFSInputStream对象，该对象管理着DataNote和NameNode的IO.
+- 客户端对这个输入流调用read()方法，存储者文件起始几个块的DataNote地址的DFSInputStream随即连接距离最近的文件中的第一个块所在的DataNote，通过对数据流反复调用read()方法，可以将数据从DataNote传输到客户端.
+- 到达块的末端时，DFSInputStream关闭与该DataNote的连接，然后寻找下一个块的最佳DataNote.
 
+### HDFS的写数据流程
 
 
 
+### map端如何使用join解决数据倾斜？
 
+https://www.cnblogs.com/yaboya/p/9246131.html
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 
