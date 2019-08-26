@@ -32,7 +32,9 @@
 
 
 
-### MapReduce的shuffle原理
+### MapReduce的shuffle原理?
+
+MapReduce确保每个reducer的输入都是按键排序的.系统将map输出作为输入传给reducer的过程称为shuffle.
 
 
 
@@ -181,6 +183,14 @@ Hadoop中在多个结点上进程间的通信是通过RPC实现的
 Hadoop的序列化格式为Writable.
 
 
+
+### Hadoop中的map和reduce的数量如何确定？
+
+map任务的数量等于输入文件被划分成的分块数.这个值取决于输入文件的大小以及文件块的大小.<br>
+
+reduce的数量不是越多越好，也不是越少越好.这需要根据实际的业务需求来确定.经验给出的法则是：目标reduce保持每个运行在5分钟左右，且产生至少一个HDFS块的输出比较合适.<br>
+
+### MapReduce中的数据倾斜问题如何解决？
 
 
 
