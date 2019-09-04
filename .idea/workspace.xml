@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0056bee9-1eac-4b7a-b07f-474202b87e95" name="Default Changelist" comment="" />
+    <list default="true" id="0056bee9-1eac-4b7a-b07f-474202b87e95" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/images/画图PPT.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/images/画图PPT.pptx" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sklearn实战笔记/K_means.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="414">
+              <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
               <folding>
                 <element signature="e#160#178#0" expanded="true" />
               </folding>
@@ -120,7 +122,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -137,6 +138,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,6 +325,7 @@
       <workItem from="1566049372200" duration="3303000" />
       <workItem from="1566135971403" duration="2577000" />
       <workItem from="1567157976437" duration="34000" />
+      <workItem from="1567210711602" duration="55000" />
     </task>
     <task id="LOCAL-00032" summary="更新了md文件">
       <created>1561186627477</created>
@@ -671,12 +674,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190710000" />
+    <option name="totallyTimeSpent" value="190765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15842135" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1606448" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1123,8 +1127,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sklearn实战笔记/K_means.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="414">
+          <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
           <folding>
             <element signature="e#160#178#0" expanded="true" />
           </folding>
