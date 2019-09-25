@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0056bee9-1eac-4b7a-b07f-474202b87e95" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/images/画图PPT.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/images/画图PPT.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/多线程.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/java/多线程.pptx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/sklearn实战笔记/K_means.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
-              <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+              <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
               <folding>
                 <element signature="e#160#178#0" expanded="true" />
               </folding>
@@ -105,6 +106,8 @@
         <option value="$PROJECT_DIR$/sklearn实战笔记/Naive_Bayes.py" />
         <option value="$PROJECT_DIR$/sklearn实战笔记/AdaBoost.py" />
         <option value="$PROJECT_DIR$/sklearn实战笔记/K_means.py" />
+        <option value="$PROJECT_DIR$/Offer/README.MD" />
+        <option value="$PROJECT_DIR$/python/product_date.py" />
       </list>
     </option>
   </component>
@@ -132,7 +135,7 @@
             <path>
               <item name="读书笔记" type="b2602c69:ProjectViewProjectNode" />
               <item name="读书笔记" type="462c0819:PsiDirectoryNode" />
-              <item name="sklearn实战笔记" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -149,6 +152,9 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images" />
     </key>
@@ -326,20 +332,8 @@
       <workItem from="1566135971403" duration="2577000" />
       <workItem from="1567157976437" duration="34000" />
       <workItem from="1567210711602" duration="55000" />
-    </task>
-    <task id="LOCAL-00032" summary="更新了md文件">
-      <created>1561186627477</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1561186627478</updated>
-    </task>
-    <task id="LOCAL-00033" summary="更新了md文件">
-      <created>1561186664999</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1561186664999</updated>
+      <workItem from="1568941480988" duration="1052000" />
+      <workItem from="1568983503336" duration="161000" />
     </task>
     <task id="LOCAL-00034" summary="更新了md文件">
       <created>1561206278525</created>
@@ -670,17 +664,30 @@
       <option name="project" value="LOCAL" />
       <updated>1567157986844</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="更新了md文件">
+      <created>1568941524845</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1568941524846</updated>
+    </task>
+    <task id="LOCAL-00082" summary="更新了md文件">
+      <created>1568941682902</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1568941682902</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190765000" />
+    <option name="totallyTimeSpent" value="191978000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1606448" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16509172" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -761,26 +768,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="更新了md文件" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MySQL/SQL的操作.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="679">
-            <caret line="221" lean-forward="true" selection-start-line="221" selection-end-line="221" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/分布式系统/base.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="128">
-            <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/java/chapter11.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1118,6 +1105,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Offer/README.MD">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="18">
+            <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/python/Decision_Tree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1206">
@@ -1125,10 +1122,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/python/product_date.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sklearn实战笔记/K_means.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
-          <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
           <folding>
             <element signature="e#160#178#0" expanded="true" />
           </folding>
