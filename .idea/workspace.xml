@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0056bee9-1eac-4b7a-b07f-474202b87e95" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/多线程.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/java/多线程.pptx" afterDir="false" />
-    </list>
+    <list default="true" id="0056bee9-1eac-4b7a-b07f-474202b87e95" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +32,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sklearn实战笔记/K_means.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
@@ -43,6 +40,16 @@
               <folding>
                 <element signature="e#160#178#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/大数据框架技术原理/项目记录文档/客户行为日志数据仓库.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -135,7 +142,13 @@
             <path>
               <item name="读书笔记" type="b2602c69:ProjectViewProjectNode" />
               <item name="读书笔记" type="462c0819:PsiDirectoryNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="大数据框架技术原理" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="读书笔记" type="b2602c69:ProjectViewProjectNode" />
+              <item name="读书笔记" type="462c0819:PsiDirectoryNode" />
+              <item name="大数据框架技术原理" type="462c0819:PsiDirectoryNode" />
+              <item name="项目记录文档" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -334,13 +347,7 @@
       <workItem from="1567210711602" duration="55000" />
       <workItem from="1568941480988" duration="1052000" />
       <workItem from="1568983503336" duration="161000" />
-    </task>
-    <task id="LOCAL-00034" summary="更新了md文件">
-      <created>1561206278525</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1561206278525</updated>
+      <workItem from="1569396865236" duration="798000" />
     </task>
     <task id="LOCAL-00035" summary="更新了md文件">
       <created>1561206284047</created>
@@ -678,16 +685,23 @@
       <option name="project" value="LOCAL" />
       <updated>1568941682902</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="更新了md文件">
+      <created>1569396906391</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1569396906392</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191978000" />
+    <option name="totallyTimeSpent" value="192776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16509172" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16731517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -768,16 +782,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="更新了md文件" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/java/chapter11.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="231">
-            <caret line="66" column="6" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/分布式系统/chapter1.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1115,17 +1119,11 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/python/product_date.py" />
     <entry file="file://$PROJECT_DIR$/python/Decision_Tree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1206">
           <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/product_date.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -1136,6 +1134,14 @@
           <folding>
             <element signature="e#160#178#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/大数据框架技术原理/项目记录文档/客户行为日志数据仓库.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
