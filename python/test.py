@@ -244,6 +244,19 @@ def test13(string):
 
 
 
-print(test12("abcabcdbb"))
+# print(test12("abcabcdbb"))
+import os
+def test14():
+    filepath="/usr/java_project/algs4/面试必备/"
+    files=os.listdir(filepath)
+    fout=open("/usr/java_project/algs4/面试必备/base.md",'a+',encoding='utf8')
+    for i,file in enumerate(files):
+        try:
+            fin = open(filepath + str(file), 'r', encoding='utf8')
+            fout.write(fin.read() + '\n')
+        except IsADirectoryError:
+            pass
+    fout.close()
 
+test14()
 
