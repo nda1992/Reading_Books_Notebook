@@ -119,6 +119,13 @@ sort -nr test.txt
 #-u		在输出行中去除重复行
 sort -u test.txt
 
+#-t指定分隔符，-k表示需要指定的列
+#test.txt:
+#	banana:30:5.5
+#	apple:10:2.5
+#	pear:90:2.3
+#	orange:20:3.4
+sort -n -k 2 -t: test.txt
 ```
 
 - uniq
